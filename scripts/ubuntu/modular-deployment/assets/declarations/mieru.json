@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "component": "mieru",
+  "contract_version": "3",
+  "display_name": "Mieru",
+  "installation_checks": {
+    "files": [
+      "/usr/bin/mita",
+      "/etc/mita/server.conf.pb",
+      "/opt/vpn/recovery/mieru-secrets.json",
+      "/lib/systemd/system/mita.service",
+      "/etc/nftables.d/40-mieru.nft"
+    ],
+    "systemd_units": ["mita.service"],
+    "health_checks": ["mieru_config", "mieru_runtime"]
+  },
+  "backup": {
+    "paths": [
+      "/etc/mita/server.conf.pb",
+      "/opt/vpn/recovery/mieru-secrets.json",
+      "/etc/nftables.d/40-mieru.nft"
+    ]
+  },
+  "restore": {
+    "daemon_reload": false,
+    "services": [
+      {"unit": "mita.service", "action": "restart"}
+    ]
+  },
+  "management": {
+    "handler": "mieru",
+    "systemd_units": ["mita.service"],
+    "parameters": [
+      {"id": "transport", "label": "Transport", "type": "string", "modifiable": false},
+      {"id": "listen_port", "label": "Port", "type": "integer", "modifiable": true, "minimum": 1025, "maximum": 65535},
+      {"id": "mtu", "label": "MTU", "type": "integer", "modifiable": false, "minimum": 1280, "maximum": 9000},
+      {"id": "user_count", "label": "Users", "type": "integer", "modifiable": false, "minimum": 1}
+    ],
+    "actions": ["inspect", "start", "stop", "restart", "enable", "disable", "update_port"]
+  },
+  "users": {
+    "supported": true,
+    "actions": ["list", "get", "create", "delete"],
+    "artifacts": ["mierus_link", "client_json", "clash_yaml"]
+  }
+}

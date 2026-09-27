@@ -1,0 +1,60 @@
+{
+  "schema_version": 2,
+  "component": "base-security",
+  "contract_version": "1",
+  "display_name": "Base + Security",
+  "installation_checks": {
+    "files": [
+      "/etc/nftables.conf",
+      "/etc/nftables.d/10-base.nft",
+      "/etc/fail2ban/jail.local"
+    ],
+    "systemd_units": [
+      "nftables.service",
+      "fail2ban.service"
+    ],
+    "health_checks": [
+      "nftables_config",
+      "vpn_filter_table"
+    ]
+  },
+  "backup": {
+    "paths": [
+      "/etc/nftables.conf",
+      "/etc/nftables.d/10-base.nft",
+      "/etc/fail2ban/jail.local"
+    ]
+  },
+  "restore": {
+    "daemon_reload": false,
+    "services": [
+      {"unit": "nftables.service", "action": "restart"},
+      {"unit": "fail2ban.service", "action": "restart"}
+    ]
+  },
+  "management": {
+    "handler": "base-security",
+    "systemd_units": [
+      "nftables.service",
+      "fail2ban.service"
+    ],
+    "parameters": [
+      {
+        "id": "ssh_port",
+        "label": "SSH port",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 65535,
+        "modifiable": false
+      }
+    ],
+    "actions": [
+      "inspect",
+      "start",
+      "stop",
+      "restart",
+      "enable",
+      "disable"
+    ]
+  }
+}

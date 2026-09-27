@@ -1,0 +1,9 @@
+.gitattributes text eol=lf
+*.env text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.tmpl text eol=lf
+SHA256SUMS text eol=lf
+manifest.lock text eol=lf

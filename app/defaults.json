@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "paths": {
+    "generated_connections_directory": "runtime\\generated",
+    "backups_directory": "runtime\\backups"
+  },
+  "modular_deployment": {
+    "paths": {
+      "bundle_directory": "scripts\\ubuntu\\modular-deployment"
+    },
+    "port_ranges": {
+      "xray": {
+        "start": 10000,
+        "end": 16999
+      },
+      "hysteria2": {
+        "start": 17000,
+        "end": 23999
+      },
+      "mieru": {
+        "start": 24000,
+        "end": 30999
+      }
+    },
+    "xray": {
+      "masquerade_host": "dl.google.com"
+    },
+    "hysteria2": {
+      "initial_user": "owner",
+      "certificate_days": 3650,
+      "bandwidth_up": "1 gbps",
+      "bandwidth_down": "1 gbps",
+      "masquerade_host": "dl.google.com"
+    },
+    "mieru": {
+      "protocol": "TCP",
+      "mtu": 1400,
+      "initial_user": "owner"
+    }
+  }
+}

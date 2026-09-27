@@ -1,0 +1,77 @@
+{
+  "schema_version": 2,
+  "component": "hysteria2",
+  "contract_version": "1",
+  "display_name": "Hysteria2",
+  "installation_checks": {
+    "files": [
+      "/etc/hysteria/config.yaml",
+      "/opt/vpn/recovery/hysteria2-secrets.env",
+      "/etc/hysteria/server.crt",
+      "/etc/hysteria/server.key",
+      "/etc/systemd/system/hysteria-server.service",
+      "/etc/nftables.d/30-hysteria2.nft"
+    ],
+    "systemd_units": ["hysteria-server.service"],
+    "health_checks": ["hysteria2_config", "hysteria2_certificate"]
+  },
+  "backup": {
+    "paths": [
+      "/etc/hysteria/config.yaml",
+      "/opt/vpn/recovery/hysteria2-secrets.env",
+      "/etc/hysteria/server.crt",
+      "/etc/hysteria/server.key",
+      "/etc/systemd/system/hysteria-server.service",
+      "/etc/nftables.d/30-hysteria2.nft"
+    ]
+  },
+  "restore": {
+    "daemon_reload": true,
+    "services": [
+      {"unit": "hysteria-server.service", "action": "restart"}
+    ]
+  },
+  "management": {
+    "handler": "hysteria2",
+    "systemd_units": ["hysteria-server.service"],
+    "parameters": [
+      {
+        "id": "listen_port",
+        "label": "Port",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 65535,
+        "modifiable": true
+      },
+      {
+        "id": "masquerade_host",
+        "label": "SNI",
+        "type": "string",
+        "format": "hostname",
+        "modifiable": true
+      }
+    ],
+    "actions": [
+      "inspect",
+      "start",
+      "stop",
+      "restart",
+      "enable",
+      "disable",
+      "update_connection"
+    ]
+  },
+  "users": {
+    "supported": true,
+    "actions": [
+      "list",
+      "get",
+      "create",
+      "delete"
+    ],
+    "artifacts": [
+      "hysteria2_link",
+      "clash_yaml"
+    ]
+  }
+}

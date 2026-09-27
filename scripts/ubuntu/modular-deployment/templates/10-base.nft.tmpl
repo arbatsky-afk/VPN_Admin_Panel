@@ -1,0 +1,5 @@
+add rule inet vpn_filter input iifname "lo" accept
+add rule inet vpn_filter input ct state established,related accept
+add rule inet vpn_filter input ip protocol icmp accept
+add rule inet vpn_filter input ip6 nexthdr ipv6-icmp accept
+add rule inet vpn_filter input tcp dport __SSH_PORT__ accept

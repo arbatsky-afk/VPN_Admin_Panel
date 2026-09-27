@@ -1,0 +1,926 @@
+{
+  "$schema": "https://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:generic/vpn-admin-panel@0.0.0",
+      "name": "vpn-admin-panel",
+      "version": "0.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "pkg:github/HyNetworks/hysteria@app%2Fv2.9.2",
+      "name": "Hysteria 2",
+      "version": "2.9.2",
+      "purl": "pkg:github/HyNetworks/hysteria@app%2Fv2.9.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "86fef8e2f1b2bf41318ac96724eee6c3b449e4e510022cc89658b63a6713922a"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.9.2/hysteria-linux-amd64"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/HyNetworks/hysteria/tree/app/v2.9.2"
+        },
+        {
+          "type": "license",
+          "url": "https://raw.githubusercontent.com/HyNetworks/hysteria/app/v2.9.2/LICENSE.md"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:artifact-path",
+          "value": "scripts/ubuntu/modular-deployment/assets/hysteria2/hysteria-linux-amd64-v2.9.2"
+        },
+        {
+          "name": "vpn-admin-panel:source-ref",
+          "value": "app/v2.9.2"
+        },
+        {
+          "name": "vpn-admin-panel:source-commit",
+          "value": "c3a806b5cbbb20fe72099529573da26b1a2e9f22"
+        },
+        {
+          "name": "vpn-admin-panel:license-path",
+          "value": "supply_chain/licenses/hysteria-MIT.txt"
+        },
+        {
+          "name": "vpn-admin-panel:license-sha256",
+          "value": "b279cfdac4db4b077f0660b5d8156d50a8bc7bd410036dc356499af43c4e84f5"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "bom-ref": "pkg:github/MetaCubeX/mihomo@v1.19.30",
+      "name": "Mihomo",
+      "version": "1.19.30",
+      "purl": "pkg:github/MetaCubeX/mihomo@v1.19.30",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f55b3028d9160beb9044f21b05dd7405b46524614a19642d6291492f5f985761"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "GPL-3.0-only"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.30/mihomo-windows-amd64-v1.19.30.zip"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/MetaCubeX/mihomo/tree/v1.19.30"
+        },
+        {
+          "type": "license",
+          "url": "https://raw.githubusercontent.com/MetaCubeX/mihomo/v1.19.30/LICENSE"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:artifact-path",
+          "value": "monitor/bin/mihomo.exe"
+        },
+        {
+          "name": "vpn-admin-panel:source-ref",
+          "value": "v1.19.30"
+        },
+        {
+          "name": "vpn-admin-panel:source-commit",
+          "value": "ac017cdd246ce8bd547653d927e7bf77d7ee73d5"
+        },
+        {
+          "name": "vpn-admin-panel:license-path",
+          "value": "supply_chain/licenses/mihomo-GPL-3.0.txt"
+        },
+        {
+          "name": "vpn-admin-panel:license-sha256",
+          "value": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "name": "vpn-admin-panel:archive-sha256",
+          "value": "22c09fd67673895ef7cd6b1820563918275c3d316f2462b306208675118db3c0"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "bom-ref": "pkg:github/XTLS/Xray-core@v26.6.27",
+      "name": "Xray-core",
+      "version": "26.6.27",
+      "purl": "pkg:github/XTLS/Xray-core@v26.6.27",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b3e5902d06d6282fe53cfa2fc426058b9aeaa429b2c812e20887cd47f26d08bf"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MPL-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://github.com/XTLS/Xray-core/releases/download/v26.6.27/Xray-linux-64.zip"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/XTLS/Xray-core/tree/v26.6.27"
+        },
+        {
+          "type": "license",
+          "url": "https://raw.githubusercontent.com/XTLS/Xray-core/v26.6.27/LICENSE"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:artifact-path",
+          "value": "scripts/ubuntu/modular-deployment/assets/xray/Xray-linux-64-v26.6.27.zip"
+        },
+        {
+          "name": "vpn-admin-panel:source-ref",
+          "value": "v26.6.27"
+        },
+        {
+          "name": "vpn-admin-panel:source-commit",
+          "value": "45cf2898ab12e97a55dd8f1f3d78d903340bdc9e"
+        },
+        {
+          "name": "vpn-admin-panel:license-path",
+          "value": "supply_chain/licenses/xray-core-MPL-2.0.txt"
+        },
+        {
+          "name": "vpn-admin-panel:license-sha256",
+          "value": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "bom-ref": "pkg:github/enfein/mieru@v3.35.0",
+      "name": "Mieru Mita",
+      "version": "3.35.0",
+      "purl": "pkg:github/enfein/mieru@v3.35.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cca7a31e7be692bf10dd5c72f8862b92695a8b06e2a3abcb22ede936e74b2342"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://github.com/enfein/mieru/releases/download/v3.35.0/mita_3.35.0_amd64.deb"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/enfein/mieru/tree/v3.35.0"
+        },
+        {
+          "type": "license",
+          "url": "https://raw.githubusercontent.com/enfein/mieru/v3.35.0/LICENSE"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:artifact-path",
+          "value": "scripts/ubuntu/modular-deployment/assets/mita/mita_3.35.0_amd64.deb"
+        },
+        {
+          "name": "vpn-admin-panel:source-ref",
+          "value": "v3.35.0"
+        },
+        {
+          "name": "vpn-admin-panel:source-commit",
+          "value": "d347d60feb6207d8016ce1c9174d29b656ae2b12"
+        },
+        {
+          "name": "vpn-admin-panel:license-path",
+          "value": "supply_chain/licenses/mieru-GPL-3.0.txt"
+        },
+        {
+          "name": "vpn-admin-panel:license-sha256",
+          "value": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/aiofiles@25.1.0",
+      "name": "aiofiles",
+      "version": "25.1.0",
+      "purl": "pkg:pypi/aiofiles@25.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "abe311e527c862958650f9438e859c1fa7568a141b22abcd015e120e86a85695"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/bc/8a/340a1555ae33d7354dbca4faa54948d76d89a27ceef032c8c3bc661d003e/aiofiles-25.1.0-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/aiogram@3.30.0",
+      "name": "aiogram",
+      "version": "3.30.0",
+      "purl": "pkg:pypi/aiogram@3.30.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "98c22665271912d258178cec591f78ee93a085a3423dd3b2e11c2851d4552470"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/87/f7/0a828d29b3a3a59f22c03690b34773fadd64f1e9c3dc34c63cdb6eef0b72/aiogram-3.30.0-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/aiohappyeyeballs@2.7.1",
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "purl": "pkg:pypi/aiohappyeyeballs@2.7.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9243213661e29250eb41368e5daa826fc017156c3b8a11440826b2e3ed376472"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "PSF-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/71/43/1947f06babed6b3f1d7f38b0c767f52df66bfb2bc10b468c4a7de9eceff2/aiohappyeyeballs-2.7.1-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/aiohttp@3.14.3",
+      "name": "aiohttp",
+      "version": "3.14.3",
+      "purl": "pkg:pypi/aiohttp@3.14.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "dff9461ec275f22135650d5ba4b4931a11f3958df7dfbb8db630000d4dee0883"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0 AND MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/9d/69/3d876ac02659f271cf7f6769f14a8e3de5b6e888ed8b5a7e998086a4cec8/aiohttp-3.14.3-cp313-cp313-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/aiosignal@1.4.0",
+      "name": "aiosignal",
+      "version": "1.4.0",
+      "purl": "pkg:pypi/aiosignal@1.4.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "053243f8b92b990551949e63930a839ff0cf0b0ebbe0597b0f3fb19e1a0fe82e"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/fb/76/641ae371508676492379f16e2fa48f4e2c11741bd63c48be4b12a6b09cba/aiosignal-1.4.0-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/annotated-types@0.8.0",
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "purl": "pkg:pypi/annotated-types@0.8.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/attrs@26.1.0",
+      "name": "attrs",
+      "version": "26.1.0",
+      "purl": "pkg:pypi/attrs@26.1.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/certifi@2026.7.22",
+      "name": "certifi",
+      "version": "2026.7.22",
+      "purl": "pkg:pypi/certifi@2026.7.22",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MPL-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/frozenlist@1.8.0",
+      "name": "frozenlist",
+      "version": "1.8.0",
+      "purl": "pkg:pypi/frozenlist@1.8.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "878be833caa6a3821caf85eb39c5ba92d28e85df26d57afb06b35b2efd937231"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/d8/cf/174c91dbc9cc49bc7b7aab74d8b734e974d1faa8f191c74af9b7e80848e6/frozenlist-1.8.0-cp313-cp313-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/idna@3.19",
+      "name": "idna",
+      "version": "3.19",
+      "purl": "pkg:pypi/idna@3.19",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/57/b0/0e52c878c53f245edd3a11020f20979b3f490f245af532c7cae3027754b5/idna-3.19-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/magic-filter@1.0.12",
+      "name": "magic-filter",
+      "version": "1.0.12",
+      "purl": "pkg:pypi/magic-filter@1.0.12",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e5929e544f310c2b1f154318db8c5cdf544dd658efa998172acd2e4ba0f6c6a6"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/cc/75/f620449f0056eff0ec7c1b1e088f71068eb4e47a46eb54f6c065c6ad7675/magic_filter-1.0.12-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/multidict@6.7.1",
+      "name": "multidict",
+      "version": "6.7.1",
+      "purl": "pkg:pypi/multidict@6.7.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "960c83bf01a95b12b08fd54324a4eb1d5b52c88932b5cba5d6e712bb3ed12eb5"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/b2/35/e994121b0e90e46134673422dd564623f93304614f5d11886b1b3e06f503/multidict-6.7.1-cp313-cp313-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/propcache@0.5.2",
+      "name": "propcache",
+      "version": "0.5.2",
+      "purl": "pkg:pypi/propcache@0.5.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "dfed59d0a5aeb01e242e66ff0300bc4a265a7c05f612d30016f0b60b1017d757"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/1c/fd/3f0f10dba4dabad3bf53102be007abf55481067952bde0fdddff439e7c61/propcache-0.5.2-cp313-cp313-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pydantic-core@2.46.5",
+      "name": "pydantic-core",
+      "version": "2.46.5",
+      "purl": "pkg:pypi/pydantic-core@2.46.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "15f4a94963c95accac15b7b657bb177d3ad82bb90b0d0526d9a9b85079925db5"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/2c/1e/1d5371213f4cc9a7ed70c0bfcc7911de22311ee99a662a56077d7292d2ac/pydantic_core-2.46.5-cp313-cp313-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pydantic@2.13.5",
+      "name": "pydantic",
+      "version": "2.13.5",
+      "purl": "pkg:pypi/pydantic@2.13.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyside6-addons@6.11.2",
+      "name": "pyside6-addons",
+      "version": "6.11.2",
+      "purl": "pkg:pypi/pyside6-addons@6.11.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f449ea4431da20e7b86752cca8d166f93434516fe417f981c27e5f8e1b554407"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/fb/c1/08bf6594101b42fc88834009f1dac59a983c5b6805c62c5081f077d09b4a/pyside6_addons-6.11.2-cp310-abi3-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyside6-essentials@6.11.2",
+      "name": "pyside6-essentials",
+      "version": "6.11.2",
+      "purl": "pkg:pypi/pyside6-essentials@6.11.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c8a29def77032773a30879f7f24415b5395ad08592d147c170824ef4c735dfc1"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/dc/09/d2662684aee4d3f027ff9b1e965f22301bc28ffc5b7f167658508e4475dc/pyside6_essentials-6.11.2-cp310-abi3-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyside6@6.11.2",
+      "name": "pyside6",
+      "version": "6.11.2",
+      "purl": "pkg:pypi/pyside6@6.11.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3201d67e3c10be2eaedd3910ff0f02351eca7e88c95a291cde5e7f2f55ef207f"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/94/fe/4aea9d30300fff4cda9bb729c1363b9e1095a8544e0d6b57065465e16599/pyside6-6.11.2-cp310-abi3-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@6.0.3",
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "purl": "pkg:pypi/pyyaml@6.0.3",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "79005a0d97d5ddabfeeea4cf676af11e647e41d81c9a7722a193022accdb6b7c"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/97/c9/39d5b874e8b28845e4ec2202b5da735d0199dbe5b8fb85f91398814a9a46/pyyaml-6.0.3-cp313-cp313-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/shiboken6@6.11.2",
+      "name": "shiboken6",
+      "version": "6.11.2",
+      "purl": "pkg:pypi/shiboken6@6.11.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6ab0eba1c904455df621f9a6df3ca2bb896bab8670572d2bc4e37804ae91f19a"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/ce/6b/fee1b4814317e4664e318644c9c007676c65a71e5b2b9d3ac4121a94dc0a/shiboken6-6.11.2-cp310-abi3-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/typing-extensions@4.16.0",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "purl": "pkg:pypi/typing-extensions@4.16.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "PSF-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/typing-inspection@0.4.4",
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "purl": "pkg:pypi/typing-inspection@0.4.4",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/yarl@1.24.5",
+      "name": "yarl",
+      "version": "1.24.5",
+      "purl": "pkg:pypi/yarl@1.24.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2dbe06fc16bc91502bca713704022182e5729861ae00277c3a23354b40929740"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://files.pythonhosted.org/packages/86/e4/62a06b7e87c4246ac76b7c2da136f972eb4a3a1fc94abb07e7022d6fdb0a/yarl-1.24.5-cp313-cp313-win_amd64.whl"
+        }
+      ],
+      "properties": [
+        {
+          "name": "vpn-admin-panel:direct-requirement",
+          "value": "false"
+        }
+      ]
+    }
+  ]
+}

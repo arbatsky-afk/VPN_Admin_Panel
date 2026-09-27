@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "component": "netdata",
+  "contract_version": "2",
+  "display_name": "Netdata",
+  "installation_checks": {
+    "files": [
+      "/usr/sbin/netdata",
+      "/etc/netdata/netdata.conf",
+      "/etc/nginx/vpn-admin-locations/netdata.conf"
+    ],
+    "systemd_units": ["netdata.service"],
+    "health_checks": [
+      "netdata_config",
+      "netdata_dashboard",
+      "netdata_listener",
+      "netdata_proxy_bearer"
+    ]
+  },
+  "backup": {
+    "paths": [
+      "/etc/netdata/netdata.conf",
+      "/etc/nginx/vpn-admin-locations/netdata.conf"
+    ]
+  },
+  "restore": {
+    "daemon_reload": false,
+    "services": [
+      {"unit": "netdata.service", "action": "restart"}
+    ]
+  },
+  "management": {
+    "handler": "netdata",
+    "systemd_units": ["netdata.service"],
+    "parameters": [
+      {"id": "listen_port", "label": "Port", "type": "integer", "modifiable": false, "minimum": 19999, "maximum": 19999}
+    ],
+    "actions": ["inspect", "start", "stop", "restart", "enable", "disable"]
+  }
+}

@@ -1,0 +1,23 @@
+location = /netdata {
+    if ($scheme != https) { return 404; }
+    return 308 /netdata/;
+}
+
+location /netdata/ {
+    if ($scheme != https) { return 404; }
+
+    proxy_redirect off;
+    proxy_http_version 1.1;
+    proxy_pass_request_headers on;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Server $host;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Netdata-Auth $http_x_netdata_auth;
+    proxy_set_header Authorization $http_authorization;
+    proxy_set_header Connection "keep-alive";
+    proxy_store off;
+    proxy_pass http://127.0.0.1:19999/;
+}

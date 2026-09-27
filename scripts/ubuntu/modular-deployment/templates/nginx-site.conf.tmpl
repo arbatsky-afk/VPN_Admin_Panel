@@ -1,0 +1,21 @@
+server {
+    listen 80 default_server;
+    listen 443 ssl default_server;
+    server_name _;
+
+    root /var/www/vpn-admin-site;
+    index index.html;
+    autoindex off;
+    server_tokens off;
+    add_header X-VPN-Admin-Component "nginx/1" always;
+
+    ssl_certificate /etc/nginx/vpn-admin-tls/server.crt;
+    ssl_certificate_key /etc/nginx/vpn-admin-tls/server.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    include /etc/nginx/vpn-admin-locations/*.conf;
+}

@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly TLS_STATE='/etc/nginx/vpn-admin-tls/state'
+readonly TLS_DIRECTORY='/etc/nginx/vpn-admin-tls'
+readonly CERTIFICATE="$TLS_DIRECTORY/server.crt"
+readonly PRIVATE_KEY="$TLS_DIRECTORY/server.key"
+readonly SITE_ROOT='/var/www/vpn-admin-site'
+readonly CONTRACT='/usr/local/lib/vpn-admin/nginx_contract.py'
+
+read -r tls_mode server_name server_address < <(python3 "$CONTRACT" state)
+[[ "$tls_mode" == letsencrypt ]] || exit 0
+
+getent ahostsv4 "$server_name" | awk -v expected="$server_address" '$1 == expected { found=1 } END { exit !found }'
+
+lineage="/etc/letsencrypt/live/vpn-admin-$server_name"
+if [[ -n ${RENEWED_LINEAGE:-} ]]; then
+  [[ "$RENEWED_LINEAGE" == "$lineage" ]] || exit 0
+else
+  certbot certonly --webroot --webroot-path "$SITE_ROOT" \
+    --domain "$server_name" --cert-name "vpn-admin-$server_name" \
+    --preferred-challenges http --non-interactive --agree-tos \
+    --register-unsafely-without-email --keep-until-expiring
+fi
+
+source_certificate="$lineage/fullchain.pem"
+source_private_key="$lineage/privkey.pem"
+[[ -f "$source_certificate" && -f "$source_private_key" ]]
+
+certificate_candidate=$(mktemp "$TLS_DIRECTORY/.server.crt.XXXXXX")
+private_key_candidate=$(mktemp "$TLS_DIRECTORY/.server.key.XXXXXX")
+certificate_backup=$(mktemp "$TLS_DIRECTORY/.server.crt.backup.XXXXXX")
+private_key_backup=$(mktemp "$TLS_DIRECTORY/.server.key.backup.XXXXXX")
+cleanup() {
+  rm -f -- "$certificate_candidate" "$private_key_candidate" "$certificate_backup" "$private_key_backup"
+}
+trap cleanup EXIT
+
+install -m 0644 -- "$source_certificate" "$certificate_candidate"
+install -m 0600 -- "$source_private_key" "$private_key_candidate"
+python3 "$CONTRACT" verify-certificate \
+  --certificate "$certificate_candidate" --private-key "$private_key_candidate" \
+  --mode letsencrypt --name "$server_name"
+
+cp -p -- "$CERTIFICATE" "$certificate_backup"
+cp -p -- "$PRIVATE_KEY" "$private_key_backup"
+mv -f -- "$certificate_candidate" "$CERTIFICATE"
+mv -f -- "$private_key_candidate" "$PRIVATE_KEY"
+chown root:root "$CERTIFICATE" "$PRIVATE_KEY"
+chmod 0644 "$CERTIFICATE"
+chmod 0600 "$PRIVATE_KEY"
+
+if ! nginx -t >/dev/null 2>&1 || ! systemctl reload nginx.service; then
+  cp -p -- "$certificate_backup" "$CERTIFICATE"
+  cp -p -- "$private_key_backup" "$PRIVATE_KEY"
+  nginx -t >/dev/null 2>&1 && systemctl reload nginx.service >/dev/null 2>&1 || true
+  exit 1
+fi
