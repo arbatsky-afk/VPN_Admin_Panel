@@ -1,0 +1,69 @@
+{
+  "schema_version": 2,
+  "component": "nginx",
+  "contract_version": "5",
+  "display_name": "Nginx",
+  "installation_checks": {
+    "files": [
+      "/usr/sbin/nginx",
+      "/etc/nginx/conf.d/vpn-admin-site.conf",
+      "/etc/nginx/vpn-admin-locations/subscriptions.conf",
+      "/etc/nginx/vpn-admin-tls/server.crt",
+      "/etc/nginx/vpn-admin-tls/server.key",
+      "/etc/nginx/vpn-admin-tls/state",
+      "/var/www/vpn-admin-site/index.html",
+      "/etc/nftables.d/50-nginx.nft",
+      "/usr/local/lib/vpn-admin/nginx_contract.py",
+      "/usr/local/lib/vpn-admin/nginx-renew",
+      "/etc/letsencrypt/renewal-hooks/deploy/vpn-admin-nginx",
+      "/etc/systemd/system/vpn-admin-nginx-renew.service",
+      "/etc/systemd/system/vpn-admin-nginx-renew.timer"
+    ],
+    "systemd_units": ["nginx.service"],
+    "health_checks": [
+      "nginx_config",
+      "nginx_certificate",
+      "nginx_http_site",
+      "nginx_https_site",
+      "nginx_listeners",
+      "nginx_renewal"
+    ]
+  },
+  "backup": {
+    "paths": [
+      "/etc/nginx/conf.d/vpn-admin-site.conf",
+      "/etc/nginx/vpn-admin-locations/subscriptions.conf",
+      "/etc/nginx/vpn-admin-tls/server.crt",
+      "/etc/nginx/vpn-admin-tls/server.key",
+      "/etc/nginx/vpn-admin-tls/state",
+      "/var/www/vpn-admin-site/index.html",
+      "/etc/nftables.d/50-nginx.nft",
+      "/usr/local/lib/vpn-admin/nginx_contract.py",
+      "/usr/local/lib/vpn-admin/nginx-renew",
+      "/etc/letsencrypt/renewal-hooks/deploy/vpn-admin-nginx",
+      "/etc/systemd/system/vpn-admin-nginx-renew.service",
+      "/etc/systemd/system/vpn-admin-nginx-renew.timer"
+    ],
+    "optional_directories": [
+      "/var/www/vpn-admin-site/subscriptions/"
+    ]
+  },
+  "restore": {
+    "daemon_reload": true,
+    "services": [
+      {"unit": "nginx.service", "action": "restart"}
+    ]
+  },
+  "management": {
+    "handler": "nginx",
+    "systemd_units": ["nginx.service"],
+    "parameters": [
+      {"id": "http_port", "label": "HTTP", "type": "integer", "modifiable": false, "minimum": 80, "maximum": 80},
+      {"id": "https_port", "label": "HTTPS", "type": "integer", "modifiable": false, "minimum": 443, "maximum": 443},
+      {"id": "server_name", "label": "Server name", "type": "string", "modifiable": false},
+      {"id": "tls_mode", "label": "TLS", "type": "string", "modifiable": false},
+      {"id": "certificate_expires_at", "label": "Certificate expires", "type": "string", "modifiable": false}
+    ],
+    "actions": ["inspect", "start", "stop", "restart", "enable", "disable"]
+  }
+}

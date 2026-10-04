@@ -1,0 +1,30 @@
+location = /subscriptions/ {
+    if ($scheme != https) { return 404; }
+    access_log off;
+    log_not_found off;
+    add_header Cache-Control "no-store" always;
+    default_type "text/plain; charset=utf-8";
+    autoindex off;
+    return 404;
+}
+
+location ~ ^/subscriptions/[A-Za-z0-9_-]+\.txt$ {
+    if ($scheme != https) { return 404; }
+    access_log off;
+    log_not_found off;
+    add_header Cache-Control "no-store" always;
+    default_type "text/plain; charset=utf-8";
+    autoindex off;
+    disable_symlinks on;
+    try_files $uri =404;
+}
+
+location /subscriptions/ {
+    if ($scheme != https) { return 404; }
+    access_log off;
+    log_not_found off;
+    add_header Cache-Control "no-store" always;
+    default_type "text/plain; charset=utf-8";
+    autoindex off;
+    return 404;
+}

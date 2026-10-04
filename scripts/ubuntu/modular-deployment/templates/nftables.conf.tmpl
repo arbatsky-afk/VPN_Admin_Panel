@@ -1,0 +1,24 @@
+#!/usr/sbin/nft -f
+
+# The modular deployment owns only this table. Do not use "flush ruleset":
+# Docker and Fail2Ban keep independent runtime rules outside vpn_filter.
+destroy table inet vpn_filter
+
+table inet vpn_filter {
+  chain input {
+    type filter hook input priority filter;
+    policy drop;
+  }
+
+  chain forward {
+    type filter hook forward priority filter;
+    policy accept;
+  }
+
+  chain output {
+    type filter hook output priority filter;
+    policy accept;
+  }
+}
+
+include "/etc/nftables.d/*.nft"

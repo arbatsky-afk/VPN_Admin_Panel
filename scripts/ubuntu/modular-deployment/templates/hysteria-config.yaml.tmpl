@@ -1,0 +1,25 @@
+listen: :__HYSTERIA_PORT__
+
+tls:
+  cert: /etc/hysteria/server.crt
+  key: /etc/hysteria/server.key
+
+bandwidth:
+  up: __HYSTERIA_BANDWIDTH_UP__
+  down: __HYSTERIA_BANDWIDTH_DOWN__
+
+auth:
+  type: userpass
+  userpass:
+    __HYSTERIA_INITIAL_USER__: __HYSTERIA_INITIAL_PASSWORD__
+
+masquerade:
+  type: proxy
+  proxy:
+    url: https://__HYSTERIA_MASQUERADE_HOST__/
+    rewriteHost: true
+
+obfs:
+  type: salamander
+  salamander:
+    password: __HYSTERIA_OBFS_PASSWORD__

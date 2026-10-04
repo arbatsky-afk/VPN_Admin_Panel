@@ -1,0 +1,73 @@
+{
+  "schema_version": 2,
+  "component": "xray",
+  "contract_version": "1",
+  "display_name": "Xray",
+  "installation_checks": {
+    "files": [
+      "/usr/local/etc/xray/config.json",
+      "/opt/vpn/recovery/xray-secrets.env",
+      "/etc/systemd/system/xray.service",
+      "/etc/nftables.d/20-xray.nft"
+    ],
+    "systemd_units": ["xray.service"],
+    "health_checks": ["xray_config"]
+  },
+  "backup": {
+    "paths": [
+      "/usr/local/etc/xray/config.json",
+      "/opt/vpn/recovery/xray-secrets.env",
+      "/etc/systemd/system/xray.service",
+      "/etc/nftables.d/20-xray.nft"
+    ]
+  },
+  "restore": {
+    "daemon_reload": true,
+    "services": [
+      {"unit": "xray.service", "action": "restart"}
+    ]
+  },
+  "management": {
+    "handler": "xray",
+    "systemd_units": ["xray.service"],
+    "parameters": [
+      {
+        "id": "listen_port",
+        "label": "Port",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 65535,
+        "modifiable": true
+      },
+      {
+        "id": "masquerade_host",
+        "label": "SNI",
+        "type": "string",
+        "format": "hostname",
+        "modifiable": true
+      }
+    ],
+    "actions": [
+      "inspect",
+      "start",
+      "stop",
+      "restart",
+      "enable",
+      "disable",
+      "update_connection"
+    ]
+  },
+  "users": {
+    "supported": true,
+    "actions": [
+      "list",
+      "get",
+      "create",
+      "delete"
+    ],
+    "artifacts": [
+      "vless_link",
+      "clash_yaml"
+    ]
+  }
+}

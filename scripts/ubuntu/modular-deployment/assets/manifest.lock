@@ -1,0 +1,31 @@
+# Local modular deployment assets — do not replace files without updating this manifest.
+
+[xray]
+version = "26.6.27"
+source_ref = "v26.6.27"
+source_commit = "45cf2898ab12e97a55dd8f1f3d78d903340bdc9e"
+source_url = "https://github.com/XTLS/Xray-core/releases/download/v26.6.27/Xray-linux-64.zip"
+file = "xray/Xray-linux-64-v26.6.27.zip"
+sha256 = "b3e5902d06d6282fe53cfa2fc426058b9aeaa429b2c812e20887cd47f26d08bf"
+license = "MPL-2.0"
+license_file = "supply_chain/licenses/xray-core-MPL-2.0.txt"
+
+[hysteria2]
+version = "2.9.2"
+source_ref = "app/v2.9.2"
+source_commit = "c3a806b5cbbb20fe72099529573da26b1a2e9f22"
+source_url = "https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.9.2/hysteria-linux-amd64"
+file = "hysteria2/hysteria-linux-amd64-v2.9.2"
+sha256 = "86fef8e2f1b2bf41318ac96724eee6c3b449e4e510022cc89658b63a6713922a"
+license = "MIT"
+license_file = "supply_chain/licenses/hysteria-MIT.txt"
+
+[mita]
+version = "3.35.0"
+source_ref = "v3.35.0"
+source_commit = "d347d60feb6207d8016ce1c9174d29b656ae2b12"
+source_url = "https://github.com/enfein/mieru/releases/download/v3.35.0/mita_3.35.0_amd64.deb"
+file = "mita/mita_3.35.0_amd64.deb"
+sha256 = "cca7a31e7be692bf10dd5c72f8862b92695a8b06e2a3abcb22ede936e74b2342"
+license = "GPL-3.0-or-later"
+license_file = "supply_chain/licenses/mieru-GPL-3.0.txt"
